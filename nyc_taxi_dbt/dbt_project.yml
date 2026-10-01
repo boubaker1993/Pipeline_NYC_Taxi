@@ -1,0 +1,21 @@
+name: nyc_taxi
+version: "1.0.0"
+config-version: 2
+
+profile: NCY_TAXI
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+
+models:
+  nyc_taxi:
+    staging:
+      +schema: STAGING
+      +materialized: table
+    final:
+      +schema: FINAL
+      +materialized: table
+    quality:
+      +schema: FINAL
+      +materialized: table

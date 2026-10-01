@@ -1,0 +1,25 @@
+USE DATABASE NYC_TAXI_DB_PARTIE_1;
+USE SCHEMA RAW;
+
+SELECT
+    COUNT(*) AS total_rows,
+    COUNT_IF(PASSENGER_COUNT IS NULL) AS missing_passenger_count,
+    COUNT_IF(TRIP_DISTANCE IS NULL) AS missing_trip_distance,
+    COUNT_IF(TOTAL_AMOUNT IS NULL) AS missing_total_amount,
+    COUNT_IF(TPEP_PICKUP_DATETIME IS NULL) AS missing_pickup,
+    COUNT_IF(TPEP_DROPOFF_DATETIME IS NULL) AS missing_dropoff
+FROM YELLOW_TAXI_RAW;
+
+SELECT
+    COUNT_IF(TOTAL_AMOUNT < 0) AS negative_amounts,
+    ROUND(100 * COUNT_IF(TOTAL_AMOUNT < 0) / COUNT(*), 2) AS negative_amount_pct
+FROM YELLOW_TAXI_RAW;
+
+SELECT
+    COUNT_IF(TRIP_DISTANCE = 0) AS zero_distance,
+    ROUND(100 * COUNT_IF(TRIP_DISTANCE = 0) / COUNT(*), 2) AS zero_distance_pct
+FROM YELLOW_TAXI_RAW;
+
+SELECT
+    COUNT_IF(TRIP_DISTANCE > 1000) AS extreme_distance
+FROM YELLOW_TAXI_RAW;

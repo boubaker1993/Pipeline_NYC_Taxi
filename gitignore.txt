@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# dbt
+target/
+logs/
+dbt_packages/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Secrets
+.env
+.env.*
+
+# OS
+.DS_Store

@@ -1,0 +1,35 @@
+version: 2
+
+sources:
+  - name: raw
+    database: NYC_TAXI_DB_PARTIE_1
+    schema: RAW
+    tables:
+      - name: yellow_taxi_raw
+        identifier: YELLOW_TAXI_RAW
+        columns:
+          - name: TPEP_PICKUP_DATETIME
+            data_tests:
+              - not_null:
+                  config:
+                    severity: warn
+          - name: TPEP_DROPOFF_DATETIME
+            data_tests:
+              - not_null:
+                  config:
+                    severity: warn
+          - name: TRIP_DISTANCE
+            data_tests:
+              - not_null:
+                  config:
+                    severity: warn
+          - name: TOTAL_AMOUNT
+            data_tests:
+              - not_null:
+                  config:
+                    severity: warn
+          - name: PASSENGER_COUNT
+            data_tests:
+              - not_null:
+                  config:
+                    severity: warn

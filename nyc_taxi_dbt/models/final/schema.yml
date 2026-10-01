@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: daily_summary
+    columns:
+      - name: trip_date
+        data_tests:
+          - not_null
+          - unique
+  - name: hourly_patterns
+    columns:
+      - name: pickup_hour
+        data_tests:
+          - not_null
+          - unique
+  - name: zone_analysis
+    columns:
+      - name: pickup_location_id
+        data_tests:
+          - not_null
+          - unique

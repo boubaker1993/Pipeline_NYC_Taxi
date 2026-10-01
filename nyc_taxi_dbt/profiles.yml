@@ -1,0 +1,10 @@
+NCY_TAXI:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      role: PUBLIC
+      warehouse: COMPUTE_WH
+      database: NYC_TAXI_DB_PARTIE_1
+      schema: RAW
+      threads: 8

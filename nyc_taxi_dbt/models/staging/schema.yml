@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: stg_yellow_taxi
+    columns:
+      - name: pickup_datetime
+        data_tests:
+          - not_null
+      - name: dropoff_datetime
+        data_tests:
+          - not_null
+      - name: trip_distance
+        data_tests:
+          - not_null
+      - name: total_amount
+        data_tests:
+          - not_null
+      - name: distance_category
+        data_tests:
+          - accepted_values:
+              values: ["SHORT", "MEDIUM", "LONG", "VERY_LONG"]
+      - name: duration_category
+        data_tests:
+          - accepted_values:
+              values: ["SHORT", "MEDIUM", "LONG", "VERY_LONG"]
+      - name: time_period
+        data_tests:
+          - accepted_values:
+              values: ["MORNING_RUSH", "DAYTIME", "EVENING_RUSH", "NIGHT"]
